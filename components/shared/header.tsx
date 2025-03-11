@@ -7,7 +7,7 @@ import Image from "next/image";
 import { Search, User } from "lucide-react";
 // import { SearchInput } from "./search-input";
 import Link from "next/link";
-import { Button } from "../ui";;
+import { Button } from "../ui";
 
 interface Props {
   className?: string;
@@ -40,7 +40,7 @@ export const Header: React.FC<Props> = ({ className }) => {
             <input
               className="rounded-2xl outline-none w-full bg-gray-100 pl-11"
               type="text"
-              placeholder="Найти пиццу..."
+              placeholder="Поиск..."
               defaultValue=""
             />
           </div>
@@ -48,10 +48,12 @@ export const Header: React.FC<Props> = ({ className }) => {
 
         {/* Правая часть */}
         <div className="flex items-center gap-3">
-          <Button variant="default" className="flex items-center gap-1">
-            <User size={16} />
-            Войти
-          </Button>
+          <Link href="/auth/login">
+            <Button variant="default" className="flex items-center gap-1">
+              <User size={16} />
+              Войти
+            </Button>
+          </Link>
         </div>
       </Container>
     </header>
