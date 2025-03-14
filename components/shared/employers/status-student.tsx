@@ -18,7 +18,7 @@ export const StatusStudent = ({ type, className }: StatusStudentProps) => {
   return (
     <span
       className={cn(
-        "text-sm px-2 py-1 rounded w-fit bg-primary/80 text-primary-foreground",
+        "text-sm px-2 py-1 rounded w-fit bg-blue-100 text-blue-700",
         className
       )}>
       {STATUS_TEXT[type]}

@@ -64,7 +64,7 @@ export default function EmployersPage() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-16">
+          <div className="flex flex-col">
             <StudentVacanciesList></StudentVacanciesList>
           </div>
         </div>

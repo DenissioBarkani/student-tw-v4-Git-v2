@@ -25,7 +25,7 @@ export const StudentVacanciesList: React.FC<Props> = ({ className }) => {
       <StudentCard></StudentCard>
       <StudentCard></StudentCard>
 
-      <Pagination className="mt-10">
+      <Pagination className="mt-4">
         <PaginationContent>
           <PaginationItem>
             <PaginationPrevious href="#" />

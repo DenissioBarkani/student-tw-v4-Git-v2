@@ -8,7 +8,7 @@ interface FooterProps {
 
 export const Footer = ({ className }: FooterProps) => {
   return (
-    <footer className={cn("border-t bg-background ", className)}>
+    <footer className={cn("border-t bg-background", className)}>
       <Container className="py-10">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           {/* Company Info */}
@@ -88,8 +88,9 @@ export const Footer = ({ className }: FooterProps) => {
           </div>
         </div>
       </Container>
-      <Container className="pb-10">
-        <div className="mt-8 border-t pt-8">
+
+      <div className="border-t">
+        <Container className="py-8">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <p className="text-sm text-muted-foreground">
               © 2024 Название компании. Все права защищены.
@@ -103,8 +104,8 @@ export const Footer = ({ className }: FooterProps) => {
               </Link>
             </div>
           </div>
-        </div>
-      </Container>
+        </Container>
+      </div>
     </footer>
   );
 };

@@ -30,7 +30,7 @@ export const StudentCard: React.FC<Props> = ({ className }) => {
 
             <div className="min-h-[96px] flex flex-col justify-between">
               <div className="">
-                <h2 className=" text-xl font-medium">Янькин Олег Никитович</h2>
+                <h2 className=" text-xl font-medium text-primary">Янькин Олег Никитович</h2>
                 <div className="text-sm text-muted-foreground">
                   <p>Донской государственный технический университет</p>
                   <div className="flex gap-1">
@@ -51,11 +51,11 @@ export const StudentCard: React.FC<Props> = ({ className }) => {
             </div>
           </div>
           <div className="grid grid-cols-[140px_1fr] gap-6 pt-4 border-t-1 mt-4">
-            <p className="text-sm text-muted-foreground flex items-center">Навыки</p>
+            <p className="text-sm text-muted-foreground  flex items-center">Навыки</p>
             <div className="flex flex-wrap gap-4">
-              <span className="text-sm px-2 py-1 rounded w-fit bg-chart-6 text-primary-foreground">C ++</span>
-              <span className="text-sm px-2 py-1 rounded w-fit bg-chart-6 text-primary-foreground">Командная работа</span>
-              <span className="text-sm px-2 py-1 rounded w-fit bg-chart-6 text-primary-foreground">NextJS</span>
+              <span className="text-sm px-2 py-1 rounded w-fit bg-green-100 text-green-700">C ++</span>
+              <span className="text-sm px-2 py-1 rounded w-fit bg-green-100 text-green-700">Командная работа</span>
+              <span className="text-sm px-2 py-1 rounded w-fit bg-green-100 text-green-700">NextJS</span>
             </div>
           </div>
         </Link>
