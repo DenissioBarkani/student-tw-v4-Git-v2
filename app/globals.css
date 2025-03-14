@@ -108,6 +108,9 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
+  /* --- */
+  --color-chart-6: var(--chart-6);
+  /* -- */
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -163,6 +166,7 @@
   /* Радиус скругления */
   --radius: 0.75rem; /* Базовая скругленность углов */
 
+  --chart-6: hsl(155, 46%, 45%); /* Зеленый для графиков */
   /* Цвета для графиков */
   --chart-1: hsl(12 76% 61%); /* Оранжевый для графиков */
   --chart-2: hsl(173 58% 39%); /* Зеленый для графиков */

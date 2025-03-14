@@ -17,7 +17,7 @@ export const StudentCard: React.FC<Props> = ({ className }) => {
       )}>
       <article className="student-profile">
         <Link href={`/product/1`} className="block hover:no-underline">
-          <header className="grid grid-cols-[140px_1fr] gap-6">
+          <div className="grid grid-cols-[140px_1fr] gap-6">
             <div className="h-24">
               <Image
                 src="/company/sapka_dlia_kataloga_small.png"
@@ -29,32 +29,33 @@ export const StudentCard: React.FC<Props> = ({ className }) => {
             </div>
 
             <div className="min-h-[96px] flex flex-col justify-between">
-              <div>
-                <h2 className="text-primary text-2xl font-medium">Frontend</h2>
-                <div className="flex gap-2 text-sm text-muted-foreground">
-                  <p>Курс 2</p>
-                  <p>Направление 00.00.00</p>
+              <div className="">
+                <h2 className=" text-xl font-medium">Янькин Олег Никитович</h2>
+                <div className="text-sm text-muted-foreground">
+                  <p>Донской государственный технический университет</p>
+                  <div className="flex gap-1">
+                    <p>Курс 2 -</p>
+                    <p>Направление 00.00.00</p>
+                  </div>
                 </div>
-                <p className="font-medium mt-1">От: 1 500 ₽</p>
+                <p className="font-medium">От: 10 500 ₽</p>
               </div>
-
-              <StatusStudent type="looking" className="mt-4" />
             </div>
-          </header>
-
-          <div className="grid grid-cols-[140px_1fr] gap-6 border-b pt-4 pb-2">
-            <p className="text-muted-foreground">Опыт работы</p>
-            <p>2 месяца</p>
           </div>
 
-          <div className="grid grid-cols-[140px_1fr] gap-6 pt-2">
-            <dt className="text-muted-foreground">Последнее место работы</dt>
-            <div>
-              <p className="font-medium">Яндекс</p>
-              <div className="flex gap-2 text-sm text-muted-foreground">
-                <span>Стажер</span>
-                <span>Июнь 2017 — Сентябрь 2017</span>
-              </div>
+          <div className="grid grid-cols-[140px_1fr] gap-6 pt-4 border-t-1 mt-4">
+            <p className="text-sm text-muted-foreground flex items-center">Желаемые вакансии</p>
+            <div className="flex flex-wrap gap-4">
+              <StatusStudent type="looking" />
+              <StatusStudent type="not_looking" />
+            </div>
+          </div>
+          <div className="grid grid-cols-[140px_1fr] gap-6 pt-4 border-t-1 mt-4">
+            <p className="text-sm text-muted-foreground flex items-center">Навыки</p>
+            <div className="flex flex-wrap gap-4">
+              <span className="text-sm px-2 py-1 rounded w-fit bg-chart-6 text-primary-foreground">C ++</span>
+              <span className="text-sm px-2 py-1 rounded w-fit bg-chart-6 text-primary-foreground">Командная работа</span>
+              <span className="text-sm px-2 py-1 rounded w-fit bg-chart-6 text-primary-foreground">NextJS</span>
             </div>
           </div>
         </Link>
