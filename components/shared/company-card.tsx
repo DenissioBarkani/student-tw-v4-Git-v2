@@ -24,7 +24,7 @@ export const CompanyCard: React.FC<Props> = ({
   return (
     <div
       className={cn(
-        "w-full rounded-2xl border-2 bg-card text-card-foreground shadow-sm overflow-hidden",
+        "w-full rounded-2xl border bg-card text-card-foreground shadow-sm overflow-hidden",
         className
       )}>
       <article>

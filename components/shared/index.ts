@@ -1,3 +1,4 @@
+
 // export { SortPopup } from "./sort-popup";
 export { Title } from "./title";
 export { Header } from "./header";
@@ -11,3 +12,8 @@ export { CompanyList } from "./company-list";
 // export { SearchInput} from './search-input'
 export { CompanyCard } from "./company-card";
 export { CheckboxFiltersGroup } from "./checkbox-filters-group";
+export {StudentVacanciesList} from "./employers/student-vacancies-list";
+export {StudentCard} from "./employers/student-card";
+export {StatusStudent} from './employers/status-student';
+export {Footer} from './footer';
+
