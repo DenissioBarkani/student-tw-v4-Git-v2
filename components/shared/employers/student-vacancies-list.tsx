@@ -11,19 +11,17 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination";
 
-
 interface Props {
   className?: string;
 }
 
 export const StudentVacanciesList: React.FC<Props> = ({ className }) => {
   return (
-    <div className={cn("grid gap-6 ", className)}>
-  
-      <StudentCard></StudentCard>
-      <StudentCard></StudentCard>
-      <StudentCard></StudentCard>
-      <StudentCard></StudentCard>
+    <div className={cn("grid gap-6", className)}>
+      <StudentCard />
+      <StudentCard />
+      <StudentCard />
+      <StudentCard />
 
       <Pagination className="mt-4">
         <PaginationContent>

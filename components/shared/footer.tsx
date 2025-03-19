@@ -8,7 +8,7 @@ interface FooterProps {
 
 export const Footer = ({ className }: FooterProps) => {
   return (
-    <footer className={cn("border-t bg-background", className)}>
+    <footer className={cn("border-t bg-background mt-10", className)}>
       <Container className="py-10">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           {/* Company Info */}

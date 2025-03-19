@@ -30,7 +30,7 @@ export default function EmployersPage() {
         />
       </div>
 
-      <div className="flex gap-[60px] mb-10">
+      <div className="flex gap-[60px]">
         {/* Фильтрация */}
         <div className="w-[250px]">
           <Filters />

@@ -13,7 +13,7 @@ export default function Home() {
         <div className=" mb-8">
           <Title text="Стажировки" size="lg" className="font-extrabold mb-4" />
         </div>
-        <div className="flex gap-[60px] mb-10">
+        <div className="flex gap-15 mb-10">
           {/* Фильтрация */}
           <div className="w-[250px]">
             <Filters />

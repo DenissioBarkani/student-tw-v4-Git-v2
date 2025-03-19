@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { StatusStudent } from "./status-student";
+import { Tag } from "../tag";
 
 interface Props {
   className?: string;
@@ -16,7 +16,7 @@ export const StudentCard: React.FC<Props> = ({ className }) => {
         className
       )}>
       <article className="student-profile">
-        <Link href={`/product/1`} className="block hover:no-underline">
+        <Link href={`/student/1`} className="block hover:no-underline">
           <div className="grid grid-cols-[140px_1fr] gap-6">
             <div className="h-24">
               <Image
@@ -30,12 +30,14 @@ export const StudentCard: React.FC<Props> = ({ className }) => {
 
             <div className="min-h-[96px] flex flex-col justify-between">
               <div className="">
-                <h2 className=" text-xl font-medium text-primary">Янькин Олег Никитович</h2>
+                <h2 className="text-xl font-medium text-primary">
+                  Янькин Олег Никитович
+                </h2>
                 <div className="text-sm text-muted-foreground">
                   <p>Донской государственный технический университет</p>
                   <div className="flex gap-1">
                     <p>Курс 2 -</p>
-                    <p>Направление 00.00.00</p>
+                    <p>Направление 09.03.04</p>
                   </div>
                 </div>
                 <p className="font-medium">От: 10 500 ₽</p>
@@ -44,18 +46,22 @@ export const StudentCard: React.FC<Props> = ({ className }) => {
           </div>
 
           <div className="grid grid-cols-[140px_1fr] gap-6 pt-4 border-t-1 mt-4">
-            <p className="text-sm text-muted-foreground flex items-center">Желаемые вакансии</p>
+            <p className="text-sm text-muted-foreground flex items-center">
+              Желаемые вакансии
+            </p>
             <div className="flex flex-wrap gap-4">
-              <StatusStudent type="looking" />
-              <StatusStudent type="not_looking" />
+              <Tag variant="blue">Web-разработчик</Tag>
+              <Tag variant="blue">Повар</Tag>
             </div>
           </div>
           <div className="grid grid-cols-[140px_1fr] gap-6 pt-4 border-t-1 mt-4">
-            <p className="text-sm text-muted-foreground  flex items-center">Навыки</p>
+            <p className="text-sm text-muted-foreground flex items-center">
+              Навыки
+            </p>
             <div className="flex flex-wrap gap-4">
-              <span className="text-sm px-2 py-1 rounded w-fit bg-green-100 text-green-700">C ++</span>
-              <span className="text-sm px-2 py-1 rounded w-fit bg-green-100 text-green-700">Командная работа</span>
-              <span className="text-sm px-2 py-1 rounded w-fit bg-green-100 text-green-700">NextJS</span>
+              <Tag variant="green">C++</Tag>
+              <Tag variant="green">Командная работа</Tag>
+              <Tag variant="green">NextJS</Tag>
             </div>
           </div>
         </Link>

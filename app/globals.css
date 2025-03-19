@@ -94,6 +94,7 @@
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
+  --color-muted-foreground-dark: var(--muted-foreground-dark);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
@@ -102,7 +103,7 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-time-primary: var(--time-primary);
-  --color-time-secondary: var(--time-secondary); 
+  --color-time-secondary: var(--time-secondary);
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
@@ -115,7 +116,6 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  
 }
 :root {
   /* Основные цвета */
@@ -141,10 +141,9 @@
 
   /* Приглушенные цвета */
   --muted: hsl(210 40% 96.1%); /* Фон неактивных элементов */
-  --muted-foreground: hsl(
-    215.4 16.3% 46.9%
-  ); /* Текст второстепенной информации */
-
+  --muted-foreground: hsl(215.4 16.3% 46.9%);
+  --muted-foreground-dark: hsl(216, 19%, 27%);
+  /* Текст второстепенной информации */
   /* Дополнительные акценты */
   --accent: hsl(210 40% 96.1%); /* Дополнительный цвет выделения */
   --accent-foreground: hsl(
@@ -152,7 +151,7 @@
   ); /* Текст на дополнительном цвете */
 
   --time-primary: hsl(29, 100%, 94%);
-  --time-secondary: hsl(29, 83%, 51%); 
+  --time-secondary: hsl(29, 83%, 51%);
 
   /* Деструктивные действия */
   --destructive: hsl(0 84.2% 60.2%); /* Цвет для опасных действий (красный) */
@@ -237,10 +236,6 @@
   }
 }
 
-
-
-
-
 /* Добавьте это в ваш глобальный CSS файл */
 .custom-scrollbar::-webkit-scrollbar {
   width: 8px;
@@ -260,7 +255,6 @@
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: #6b7280;
 }
-
 
 /* Стили для левого скроллбара */
 .custom-scrollbar-left::-webkit-scrollbar {

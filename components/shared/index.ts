@@ -14,6 +14,7 @@ export { CompanyCard } from "./company-card";
 export { CheckboxFiltersGroup } from "./checkbox-filters-group";
 export {StudentVacanciesList} from "./employers/student-vacancies-list";
 export {StudentCard} from "./employers/student-card";
-export {StatusStudent} from './employers/status-student';
 export {Footer} from './footer';
+export {Tag} from './tag';
+export {HardSkillsChart} from './employers/hard-skills-chart'
 
