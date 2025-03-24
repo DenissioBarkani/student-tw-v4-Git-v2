@@ -1,4 +1,3 @@
-
 // export { SortPopup } from "./sort-popup";
 export { Title } from "./title";
 export { Header } from "./header";
@@ -12,9 +11,8 @@ export { CompanyList } from "./company-list";
 // export { SearchInput} from './search-input'
 export { CompanyCard } from "./company-card";
 export { CheckboxFiltersGroup } from "./checkbox-filters-group";
-export {StudentVacanciesList} from "./employers/student-vacancies-list";
-export {StudentCard} from "./employers/student-card";
-export {Footer} from './footer';
-export {Tag} from './tag';
-export {HardSkillsChart} from './employers/hard-skills-chart'
-
+export { StudentProfilesList } from "./employers/student-profiles-list";
+export { StudentCard } from "./student-profile/student-card";
+export { Footer } from "./footer";
+export { Tag } from "./tag";
+export { HardSkillsChart } from "./student-profile/hard-skills-chart";

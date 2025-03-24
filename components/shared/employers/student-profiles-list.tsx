@@ -1,6 +1,6 @@
 import React from "react";
 import { cn } from "@/lib/utils";
-import { StudentCard } from "./student-card";
+import { StudentCard } from "../student-profile/student-card";
 import {
   Pagination,
   PaginationContent,
@@ -15,7 +15,7 @@ interface Props {
   className?: string;
 }
 
-export const StudentVacanciesList: React.FC<Props> = ({ className }) => {
+export const StudentProfilesList: React.FC<Props> = ({ className }) => {
   return (
     <div className={cn("grid gap-6", className)}>
       <StudentCard />

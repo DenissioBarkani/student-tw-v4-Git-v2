@@ -28,7 +28,7 @@ export const CompanyCard: React.FC<Props> = ({
         className
       )}>
       <article>
-        <Link href={`/product/1`} className="block hover:no-underline">
+        <Link href={`/company/1`} className="block hover:no-underline">
           <div className="relative bg-secondary h-56">
             <Image
               src="/company/sapka_dlia_kataloga_small.png"

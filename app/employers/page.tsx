@@ -3,7 +3,7 @@ import {
   Categories,
   Container,
   Filters,
-  StudentVacanciesList,
+  StudentProfilesList,
   Title,
 } from "@/components/shared";
 
@@ -65,7 +65,7 @@ export default function EmployersPage() {
           </div>
 
           <div className="flex flex-col">
-            <StudentVacanciesList></StudentVacanciesList>
+            <StudentProfilesList></StudentProfilesList>
           </div>
         </div>
       </div>

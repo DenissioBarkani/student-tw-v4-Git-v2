@@ -14,6 +14,7 @@ import {
   Calendar,
   ExternalLink,
 } from "lucide-react";
+import { Button } from "@/components/ui";
 
 export default function StudentProfile() {
   return (
@@ -74,9 +75,12 @@ export default function StudentProfile() {
                     <span>Опыт: 2 месяц</span>
                   </div>
 
-                  <button className="mt-auto w-full flex items-center justify-center gap-2 px-4 py-2 text-sm text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-50">
+                  <Button
+                    size={"sm"}
+                    variant={"outline"}
+                    className="mt-auto text-sm font-mono rounded-lg">
                     Посмотреть
-                  </button>
+                  </Button>
                 </div>
                 <div className="rounded-lg border bg-white p-6 transition-all hover:shadow-md flex flex-col">
                   <div className="flex gap-3 mb-4">
@@ -97,10 +101,12 @@ export default function StudentProfile() {
                     <Calendar className="w-4 h-4" />
                     <span>Опыт: 1 месяц</span>
                   </div>
-
-                  <button className="mt-auto w-full flex items-center justify-center gap-2 px-4 py-2 text-sm text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-50">
+                  <Button
+                    size={"sm"}
+                    variant={"outline"}
+                    className="mt-auto text-sm font-mono rounded-lg">
                     Посмотреть
-                  </button>
+                  </Button>
                 </div>
                 <div className="rounded-lg border bg-white p-6 transition-all hover:shadow-md flex flex-col">
                   <div className="flex gap-3 mb-4">
@@ -122,9 +128,12 @@ export default function StudentProfile() {
                     <span>Опыт: 1 месяц</span>
                   </div>
 
-                  <button className="mt-auto w-full flex items-center justify-center gap-2 px-4 py-2 text-sm text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-50">
+                  <Button
+                    size={"sm"}
+                    variant={"outline"}
+                    className="mt-auto text-sm font-mono rounded-lg">
                     Посмотреть
-                  </button>
+                  </Button>
                 </div>
               </div>
             </div>
@@ -146,7 +155,7 @@ export default function StudentProfile() {
               </div>
             </div>
 
-            <div className="mb-8">
+            <div className="">
               <Title text="Портфолио" size="sm" className="mb-4" />
               <div className="space-y-6">
                 <div className="rounded-lg border bg-white p-6 hover:shadow-md transition-all">
