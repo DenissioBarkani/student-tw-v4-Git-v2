@@ -1,6 +1,6 @@
 import React from "react";
 import { cn } from "@/lib/utils";
-import { StudentCard } from "../student-profile/student-card";
+import { StudentCard } from "./student-card";
 import {
   Pagination,
   PaginationContent,

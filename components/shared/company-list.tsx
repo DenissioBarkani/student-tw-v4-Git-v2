@@ -1,7 +1,6 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+
 "use client";
 import React from "react";
-import { Title } from "./title";
 import { cn } from "@/lib/utils";
 import { CompanyCard } from "./company-card";
 import {
@@ -13,50 +12,30 @@ import {
   PaginationEllipsis,
   PaginationNext,
 } from "../ui/pagination";
-// import { useIntersection } from "react-use";
-// import { useCategoryStore } from "@/store/category";
+import { companiesData } from '@/lib/config/company';
 
 interface Props {
-  title: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  items: any[];
-  listClassName?: string;
+  // items: any[];
   className?: string;
-  categoryId: number;
+  listClassName?: string;
 }
 
+
+
+
 export const CompanyList: React.FC<Props> = ({
-  title,
-  items,
   listClassName,
-  categoryId,
   className,
 }) => {
-  // const setActiveCategoryId = useCategoryStore((state) => state.setActiveId);
-  // const intersectionRef = React.useRef<HTMLDivElement>(null!);
-  // const intersection = useIntersection(intersectionRef, {
-  //   threshold: 0.4,
-  // });
-
-  // React.useEffect(() => {
-  //   if (intersection?.isIntersecting) {
-  //     setActiveCategoryId(categoryId);
-  //   }
-  // }, [categoryId, intersection?.isIntersecting, title]);
-
   return (
     <div className={className}>
       <div className={cn("grid grid-cols-3 gap-[14px]", listClassName)}>
-        <CompanyCard />
-        <CompanyCard />
-        <CompanyCard />
-        <CompanyCard />
-        <CompanyCard />
-        <CompanyCard />
-        <CompanyCard />
-        <CompanyCard />
-        <CompanyCard />
-        <CompanyCard />
+        {companiesData.map((company, index) => (
+          <CompanyCard key={index} id={company.id} name={company.name} imageUrl={company.imageUrl} description={company.description} tags={company.tags} deadline={company.deadline} places={company.places} />
+         ))}
+        
+        
       </div>
       <Pagination className="mt-10">
         <PaginationContent>

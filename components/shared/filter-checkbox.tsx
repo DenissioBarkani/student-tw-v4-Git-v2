@@ -1,19 +1,18 @@
 import React from "react";
 import { Checkbox } from "../ui/checkbox";
 
-
-export interface FilterChecboxProps {
+export interface FilterCheckboxProps {
   text: string;
   value: string;
-  count?: string;
+  endAdornment?: React.ReactNode;
   onCheckedChange?: (checked: boolean) => void;
   checked?: boolean;
+
 }
 
-export const FilterCheckbox: React.FC<FilterChecboxProps> = ({
+export const FilterCheckbox: React.FC<FilterCheckboxProps> = ({
   text,
   value,
-  count,
   onCheckedChange,
   checked,
 }) => {
@@ -27,7 +26,6 @@ export const FilterCheckbox: React.FC<FilterChecboxProps> = ({
         className=""
       />
       <label htmlFor={`checkbox-${String(value)}`} >{text}</label>
-      <label className="ml-auto text-sm text-muted-foreground">{count}</label>
     </div>
   );
 };

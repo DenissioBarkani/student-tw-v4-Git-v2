@@ -7,7 +7,7 @@ function Card({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="card"
       className={cn(
-        "bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm",
+        "rounded-2xl border shadow-sm overflow-hidden",
         className
       )}
       {...props}
@@ -15,11 +15,11 @@ function Card({ className, ...props }: React.ComponentProps<"div">) {
   )
 }
 
-function CardHeader({ className, ...props }: React.ComponentProps<"div">) {
+function CardHover({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
-      data-slot="card-header"
-      className={cn("flex flex-col gap-1.5 px-6", className)}
+      data-slot="card-hover"
+      className={cn("rounded-2xl border shadow-sm overflow-hidden transition-all duration-300 hover:shadow-lg", className)}
       {...props}
     />
   )
@@ -65,4 +65,4 @@ function CardFooter({ className, ...props }: React.ComponentProps<"div">) {
   )
 }
 
-export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }
+export { Card, CardHover, CardFooter, CardTitle, CardDescription, CardContent }

@@ -5,6 +5,7 @@ import {
   Filters,
   Title,
 } from "@/components/shared";
+import { studentsFilters } from '@/lib/config/filters';
 
 export default function Home() {
   return (
@@ -16,13 +17,13 @@ export default function Home() {
         <div className="flex gap-15 mb-10">
           {/* Фильтрация */}
           <div className="w-[250px]">
-            <Filters />
+            <Filters sections={studentsFilters} />
           </div>
           <div className="flex-1">
             <Categories className="mb-8" />
 
             <div className="flex flex-col gap-16">
-              <CompanyList title={""} items={[]} categoryId={0}></CompanyList>
+              <CompanyList items={[]}></CompanyList>
             </div>
           </div>
         </div>

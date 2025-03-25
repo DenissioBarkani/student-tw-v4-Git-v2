@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Tag } from "../tag";
+import { CardHover } from "@/components/ui/card";
 
 interface Props {
   className?: string;
@@ -10,11 +11,7 @@ interface Props {
 
 export const StudentCard: React.FC<Props> = ({ className }) => {
   return (
-    <div
-      className={cn(
-        "w-full rounded-2xl border bg-card text-card-foreground shadow-sm overflow-hidden p-4",
-        className
-      )}>
+    <CardHover className={cn("p-4", className)}>
       <article className="student-profile">
         <Link href={`/student/1`} className="block hover:no-underline">
           <div className="grid grid-cols-[140px_1fr] gap-6">
@@ -66,6 +63,6 @@ export const StudentCard: React.FC<Props> = ({ className }) => {
           </div>
         </Link>
       </article>
-    </div>
+    </CardHover>
   );
 };

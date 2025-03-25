@@ -5,72 +5,87 @@ import { Button } from "../ui";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image"; // Импортируем компонент Image
 import { cn } from "@/lib/utils";
+import { CardHover } from "../ui/card";
+import { Tag } from "./tag";
+
+interface CompanyTag {
+  id: number;
+  text: string;
+}
 
 interface Props {
-  // id: number;
-  // name: string;
-  // price: number;
-  // imageUrl: string;
+  id: number;
+  name: string;
+  imageUrl: string;
+  description: string;
+  tags: CompanyTag[];
+  deadline: string;
+  places: number;
   className?: string;
 }
 
+// const tags = [
+//   { id: 1, text: "Оффлайн" },
+//   { id: 2, text: "Гибкий график1" },
+//   { id: 3, text: "Обучение" },
+// ];
+
 export const CompanyCard: React.FC<Props> = ({
-  // id,
-  // name,
-  // price,
-  // imageUrl,
+  id,
+  name,
+  imageUrl,
+  description,
+  tags,
+  deadline,
+  places,
   className,
 }) => {
   return (
-    <div
-      className={cn(
-        "w-full rounded-2xl border bg-card text-card-foreground shadow-sm overflow-hidden",
-        className
-      )}>
+    <CardHover className={cn(" ", className)}>
       <article>
-        <Link href={`/company/1`} className="block hover:no-underline">
+        <Link href={`/company/${id}`} className="block hover:no-underline">
           <div className="relative bg-secondary h-56">
             <Image
-              src="/company/sapka_dlia_kataloga_small.png"
+              src={imageUrl}
               width={1140}
               height={900}
-              alt="Озон"
+              alt={name}
               className=" h-full object-cover"
             />
           </div>
 
           <div className="p-3">
             <div className="flex flex-wrap gap-2 mb-2">
-              {["Удаленка", "Гибкий график", "Оффлайн"].map((tag) => (
-                <span
-                  key={tag}
-                  className="inline-block px-2 py-1 bg-muted rounded-[4px] text-[10px] not-last:font-normal text-muted-foreground"
-                  aria-label={`Особенность: ${tag}`}>
-                  {tag}
-                </span>
+              {tags.map((tag) => (
+                <Tag
+                  className="px-2 py-1 bg-muted rounded-[4px] text-[12px] text-muted-foreground"
+                  key={tag.id}
+                  variant="default"
+                  size="default">
+                  {tag.text}
+                </Tag>
               ))}
             </div>
 
             <Title
-              text={"Озон"}
+              text={name}
               size="sm"
               className="text-lg font-medium mb-2.5"
             />
 
             <p className="text-sm text-muted-foreground line-clamp-4 overflow-hidden mb-3">
-              Стань частью крупнейшей IT-экосистемы страны, участвуй в реальных
-              задачах, решение которых принесет пользу клиентам и нашим сотрудникам
+              {description}
             </p>
 
             <time
               dateTime="2023-12-31"
               className="inline-block px-2 py-1 text-[10px] text-time-secondary bg-time-primary rounded-lg">
-              Приём заявок до: 31 декабря
+              Приём заявок до: {deadline}
             </time>
 
             <div className="flex justify-between items-center">
               <div className="text-base">
-                <span className="text-primary font-semibold">10</span> мест
+                <span className="text-primary font-semibold">{places}</span> мест
               </div>
 
               <Button
@@ -85,6 +100,6 @@ export const CompanyCard: React.FC<Props> = ({
           </div>
         </Link>
       </article>
-    </div>
+    </CardHover>
   );
 };

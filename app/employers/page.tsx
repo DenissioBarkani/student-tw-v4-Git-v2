@@ -14,6 +14,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { employersFilters } from '@/lib/config/filters';
 
 // import { Button } from "@/components/ui/button";
 // import { Card } from "@/components/ui/card";
@@ -33,7 +34,7 @@ export default function EmployersPage() {
       <div className="flex gap-[60px]">
         {/* Фильтрация */}
         <div className="w-[250px]">
-          <Filters />
+          <Filters sections={employersFilters} />
         </div>
         <div className="flex-1">
           <Categories className="mb-8" />

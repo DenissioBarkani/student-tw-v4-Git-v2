@@ -1,18 +1,17 @@
-// export { SortPopup } from "./sort-popup";
 export { Title } from "./title";
 export { Header } from "./header";
 export { Container } from "./container";
 export { Categories } from "./categories";
-// export { TopBar } from "./top-bar";
 export { Filters } from "./filters";
 export { FilterCheckbox } from "./filter-checkbox";
-// export { RangeSlider } from "./range-slider";
 export { CompanyList } from "./company-list";
-// export { SearchInput} from './search-input'
 export { CompanyCard } from "./company-card";
 export { CheckboxFiltersGroup } from "./checkbox-filters-group";
 export { StudentProfilesList } from "./employers/student-profiles-list";
-export { StudentCard } from "./student-profile/student-card";
+export { StudentCard } from "./employers/student-card";
 export { Footer } from "./footer";
 export { Tag } from "./tag";
 export { HardSkillsChart } from "./student-profile/hard-skills-chart";
+export { MyRadioGroup } from "./my-radio-group";
+export { StudentPortfolioList } from "./student-profile/student-portfolio-list";
+export { StudentProjectCard } from "./student-profile/student-project-card";
