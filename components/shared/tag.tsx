@@ -21,7 +21,7 @@ export const Tag = ({
 
   const sizeStyles = {
     default: "text-sm px-2 py-1",
-    sm: "text-xs px-1.5 py-0.5",
+    sm: "text-xs px-1 py-0.5",
   };
 
   return (
