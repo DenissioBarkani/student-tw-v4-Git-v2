@@ -6,14 +6,15 @@ import { Tag } from "../tag";
 import { CardHover } from "@/components/ui/card";
 
 interface Props {
+  id: string;
   className?: string;
 }
 
-export const StudentCard: React.FC<Props> = ({ className }) => {
+export const StudentCard: React.FC<Props> = ({ className, id }) => {
   return (
     <CardHover className={cn("p-4", className)}>
       <article className="student-profile">
-        <Link href={`/student/1`} className="block hover:no-underline">
+        <Link href={`/student/${id}`} className="block hover:no-underline">
           <div className="grid grid-cols-[140px_1fr] gap-6">
             <div className="h-24">
               <Image

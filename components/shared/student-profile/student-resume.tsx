@@ -1,5 +1,4 @@
 import { cn } from "@/lib/utils";
-import { StudentProjectCard } from "./student-project-card";
 import { Button } from "@/components/ui";
 import { FileText, Calendar } from "lucide-react";
 
@@ -47,11 +46,9 @@ export function StudentResume({ className, salary = 0, position, experience }: P
 }
 
 
-
 function formatExperience(months: number): string {
-    if (months < 1) return "нет опыта";
+    if (months <= 0) return "нет опыта";
     
-    // Если меньше года - показываем месяцы
     if (months < 12) {
         return `${months} ${getMonthWord(months)}`;
     }
@@ -59,14 +56,20 @@ function formatExperience(months: number): string {
     const years = Math.floor(months / 12);
     const remainingMonths = months % 12;
     
-    // Если ровно год/года без месяцев
     if (remainingMonths === 0) {
         return `${years} ${getYearWord(years)}`;
     }
     
-    // Если год + месяцы - показываем диапазон
-    const upperBound = years + (remainingMonths >= 6 ? 1 : 0); // Округляем до ближайшего года
-    return `${years}-${upperBound} ${getYearWord(upperBound)}`;
+    if (years === 1) return "1-2 года";
+    if (years === 2) return "2-3 года";
+    if (years === 3) return "3-4 года";
+    if (years === 4) return "4-5 лет";
+    if (years === 5) return "5-6 лет";
+    if (years >= 6) return "более 6 лет";
+    
+    throw new Error(
+        `Некорректное количество месяцев (${months}). Проверьте условия в функции formatExperience.`
+    );
 }
 
 function getYearWord(years: number): string {

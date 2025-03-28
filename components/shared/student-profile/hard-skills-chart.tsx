@@ -1,5 +1,6 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
 
 interface Props {
@@ -35,7 +36,7 @@ const hardSkillsData = [
 
 export function HardSkillsChart({ className }: Props) {
   return (
-    <div className="h-[300px] w-full">
+    <div className={cn(className, "h-[300px] w-full")}>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart data={hardSkillsData} layout="vertical">
           <XAxis type="number" domain={[0, 100]} />

@@ -18,10 +18,10 @@ interface Props {
 export const StudentProfilesList: React.FC<Props> = ({ className }) => {
   return (
     <div className={cn("grid gap-6", className)}>
-      <StudentCard />
-      <StudentCard />
-      <StudentCard />
-      <StudentCard />
+      <StudentCard id={"1"} />
+      <StudentCard id={"2"} />
+      <StudentCard id={"3"} />
+      <StudentCard id={"4"} />
 
       <Pagination className="mt-4">
         <PaginationContent>

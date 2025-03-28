@@ -3,7 +3,7 @@
 import {
   Container,
   HardSkillsChart,
-  StudentPortfolioList,
+  StudentProjectCard,
   StudentResume,
   Title,
 } from "@/components/shared";
@@ -16,12 +16,18 @@ import {
   GraduationCap,
   Building2,
   BookOpen,
-  FileText,
-  Calendar,
 } from "lucide-react";
-import { Button } from "@/components/ui";
+import { students } from "@/data/students";
+import { useParams } from "next/navigation";
 
 export default function StudentProfile() {
+  const params = useParams();
+  const student = students.find((s) => s.id === params.id);
+
+  if (!student) {
+    return <div>Студент не найден</div>;
+  }
+
   return (
     <Container className="mt-10">
       <div className="flex gap-15">
@@ -31,10 +37,7 @@ export default function StudentProfile() {
             <div className="">
               <Title text="О себе" size="sm" className="mb-4" />
               <p className="text-gray-500 mb-6">
-                Увлеченный разработчик, специализирующийся на создании
-                веб-приложений. Имею опыт работы с современными технологиями и
-                фреймворками. Активно изучаю новые инструменты разработки и
-                всегда готов к новым вызовам.
+              {student?.aboutMe || "Описание студента отсутствует"}
               </p>
             </div>
 
@@ -61,8 +64,14 @@ export default function StudentProfile() {
               <Title text="Резюме" size="sm" className="mb-4" />
               <div className="grid grid-cols-3 gap-4">
                 <StudentResume position={"Web"} experience={1}></StudentResume>
-                <StudentResume position={"Повар"} salary={15000} experience={6}></StudentResume>
-                <StudentResume position={"Тестирвщик"} salary={20000} experience={16}></StudentResume>
+                <StudentResume
+                  position={"Повар"}
+                  salary={15000}
+                  experience={6}></StudentResume>
+                <StudentResume
+                  position={"Тестирвщик"}
+                  salary={20000}
+                  experience={16}></StudentResume>
               </div>
             </div>
 
@@ -85,7 +94,18 @@ export default function StudentProfile() {
 
             <div className="">
               <Title text="Портфолио" size="sm" className="mb-4" />
-              <StudentPortfolioList></StudentPortfolioList>
+              <div className="space-y-6">
+                <StudentProjectCard
+                  title={""}
+                  description={""}
+                  link={""}
+                  tags={[]}></StudentProjectCard>
+                <StudentProjectCard
+                  title={""}
+                  description={""}
+                  link={""}
+                  tags={[]}></StudentProjectCard>
+              </div>
             </div>
           </div>
         </div>
