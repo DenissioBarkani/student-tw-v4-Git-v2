@@ -5,7 +5,6 @@ import { Button } from "../ui";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image"; // Импортируем компонент Image
 import { cn } from "@/lib/utils";
-import { CardHover } from "../ui/card";
 import { Tag } from "./tag";
 
 interface CompanyTag {
@@ -24,12 +23,6 @@ interface Props {
   className?: string;
 }
 
-// const tags = [
-//   { id: 1, text: "Оффлайн" },
-//   { id: 2, text: "Гибкий график1" },
-//   { id: 3, text: "Обучение" },
-// ];
-
 export const CompanyCard: React.FC<Props> = ({
   id,
   name,
@@ -41,65 +34,70 @@ export const CompanyCard: React.FC<Props> = ({
   className,
 }) => {
   return (
-    <CardHover className={cn(" ", className)}>
-      <article>
-        <Link href={`/company/${id}`} className="block hover:no-underline">
-          <div className="relative bg-secondary h-56">
-            <Image
-              src={imageUrl}
-              width={1140}
-              height={900}
-              alt={name}
-              className=" h-full object-cover"
-            />
-          </div>
+    <Link
+      href={`/company/${id}`}
+      className={cn(
+        "h-full flex flex-col rounded-2xl border shadow-sm overflow-hidden transition-all duration-300 hover:shadow-lg",
+        className
+      )}>
+      <div className="relative bg-secondary h-56">
+        <Image
+          src={imageUrl}
+          width={1140}
+          height={900}
+          alt={name}
+          className=" h-full object-cover"
+        />
+      </div>
 
-          <div className="p-3">
-            <div className="flex flex-wrap gap-2 mb-2">
-              {tags.map((tag) => (
-                <Tag
-                  className="px-2 py-1 bg-muted rounded-[4px] text-[12px] text-muted-foreground"
-                  key={tag.id}
-                  variant="default"
-                  size="default">
-                  {tag.text}
-                </Tag>
-              ))}
+      <div className="p-3 flex flex-col flex-grow">
+        <div className="flex flex-wrap gap-2 mb-3">
+          {tags.map((tag) => (
+            <Tag
+              className="px-2 py-1 bg-muted rounded-[4px] text-[10px] text-muted-foreground"
+              key={tag.id}
+              variant="default"
+              size="sm">
+              {tag.text}
+            </Tag>
+          ))}
+        </div>
+
+        <Title
+          text={name}
+          size="sm"
+          className="text-lg font-medium mb-2.5 leading-5"
+        />
+
+        <div className="flex-grow">
+          <p className="text-sm text-muted-foreground line-clamp-4">
+            {description}
+          </p>
+        </div>
+
+        <div className="mt-2.5">
+          <time
+            dateTime="2023-12-31"
+            className="inline-block px-2 py-1 text-[10px] text-time-secondary bg-time-primary rounded-lg">
+            Приём заявок до: {deadline}
+          </time>
+
+          <div className="flex justify-between items-center">
+            <div className="text-base">
+              <span className="text-primary font-semibold">{places}</span> мест
             </div>
 
-            <Title
-              text={name}
-              size="sm"
-              className="text-lg font-medium mb-2.5"
-            />
-
-            <p className="text-sm text-muted-foreground line-clamp-4 overflow-hidden mb-3">
-              {description}
-            </p>
-
-            <time
-              dateTime="2023-12-31"
-              className="inline-block px-2 py-1 text-[10px] text-time-secondary bg-time-primary rounded-lg">
-              Приём заявок до: {deadline}
-            </time>
-
-            <div className="flex justify-between items-center">
-              <div className="text-base">
-                <span className="text-primary font-semibold">{places}</span> мест
-              </div>
-
-              <Button
-                variant="link"
-                size={"link"}
-                textSize={"lg"}
-                className="gap-1 text-lg">
-                Подробнее
-                <ArrowRight size={18} className="shrink-0" />
-              </Button>
-            </div>
+            <Button
+              variant="link"
+              size={"link"}
+              textSize={"lg"}
+              className="gap-1 text-lg">
+              Подробнее
+              <ArrowRight size={18} />
+            </Button>
           </div>
-        </Link>
-      </article>
-    </CardHover>
+        </div>
+      </div>
+    </Link>
   );
 };

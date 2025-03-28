@@ -4,7 +4,6 @@ export { Container } from "./container";
 export { Categories } from "./categories";
 export { Filters } from "./filters";
 export { FilterCheckbox } from "./filter-checkbox";
-export { CompanyList } from "./company-list";
 export { CompanyCard } from "./company-card";
 export { CheckboxFiltersGroup } from "./checkbox-filters-group";
 export { StudentProfilesList } from "./employers/student-profiles-list";

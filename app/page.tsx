@@ -1,11 +1,22 @@
+"use client";
 import {
   Categories,
-  CompanyList,
+  CompanyCard,
   Container,
   Filters,
   Title,
 } from "@/components/shared";
-import { studentsFilters } from '@/lib/config/filters';
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationPrevious,
+  PaginationLink,
+  PaginationEllipsis,
+  PaginationNext,
+} from "@/components/ui/pagination";
+import { companiesData } from "@/lib/config/company";
+import { studentsFilters } from "@/lib/config/filters";
 
 export default function Home() {
   return (
@@ -22,8 +33,45 @@ export default function Home() {
           <div className="flex-1">
             <Categories className="mb-8" />
 
-            <div className="flex flex-col gap-16">
-              <CompanyList items={[]}></CompanyList>
+            <div className="flex flex-col gap-8">
+              <div className="grid grid-cols-3 gap-[14px]">
+                {companiesData.map((company, index) => (
+                  <CompanyCard
+                    key={index}
+                    id={company.id}
+                    name={company.name}
+                    imageUrl={company.imageUrl}
+                    description={company.description}
+                    tags={company.tags}
+                    deadline={company.deadline}
+                    places={company.places}
+                  />
+                ))}
+              </div>
+              <Pagination className=" ">
+                <PaginationContent>
+                  <PaginationItem>
+                    <PaginationPrevious href="#" />
+                  </PaginationItem>
+                  <PaginationItem>
+                    <PaginationLink href="#" isActive>
+                      1
+                    </PaginationLink>
+                  </PaginationItem>
+                  <PaginationItem>
+                    <PaginationLink href="#">2</PaginationLink>
+                  </PaginationItem>
+                  <PaginationItem>
+                    <PaginationLink href="#">3</PaginationLink>
+                  </PaginationItem>
+                  <PaginationItem>
+                    <PaginationEllipsis />
+                  </PaginationItem>
+                  <PaginationItem>
+                    <PaginationNext href="#" />
+                  </PaginationItem>
+                </PaginationContent>
+              </Pagination>
             </div>
           </div>
         </div>
