@@ -4,6 +4,7 @@ import {
   Container,
   HardSkillsChart,
   StudentPortfolioList,
+  StudentResume,
   Title,
 } from "@/components/shared";
 import Image from "next/image";
@@ -59,86 +60,9 @@ export default function StudentProfile() {
             <div className="">
               <Title text="Резюме" size="sm" className="mb-4" />
               <div className="grid grid-cols-3 gap-4">
-                <div className="rounded-lg border bg-white p-6 transition-all hover:shadow-md flex flex-col">
-                  <div className="flex gap-3 mb-4">
-                    <div>
-                      <div className="p-2 bg-blue-50 rounded-lg">
-                        <FileText className="w-5 h-5 text-blue-600  bg-blue-50 rounded-lg" />
-                      </div>
-                    </div>
-
-                    <div>
-                      <h3 className="font-medium">Web-Разработчик</h3>
-                      <div className="flex items-center gap-2 text-sm text-gray-600">
-                        <span>От: 20 000₽</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-600 mb-4">
-                    <Calendar className="w-4 h-4" />
-                    <span>Опыт: 2 месяц</span>
-                  </div>
-
-                  <Button
-                    size={"sm"}
-                    variant={"outline"}
-                    className="mt-auto text-sm font-mono rounded-lg">
-                    Посмотреть
-                  </Button>
-                </div>
-                <div className="rounded-lg border bg-white p-6 transition-all hover:shadow-md flex flex-col">
-                  <div className="flex gap-3 mb-4">
-                    <div>
-                      <div className="p-2 bg-blue-50 rounded-lg">
-                        <FileText className="w-5 h-5 text-blue-600  bg-blue-50 rounded-lg" />
-                      </div>
-                    </div>
-
-                    <div>
-                      <h3 className="font-medium">Повар</h3>
-                      <div className="flex items-center gap-2 text-sm text-gray-600">
-                        <span>От: 10 000₽</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-600 mb-4">
-                    <Calendar className="w-4 h-4" />
-                    <span>Опыт: 1 месяц</span>
-                  </div>
-                  <Button
-                    size={"sm"}
-                    variant={"outline"}
-                    className="mt-auto text-sm font-mono rounded-lg">
-                    Посмотреть
-                  </Button>
-                </div>
-                <div className="rounded-lg border bg-white p-6 transition-all hover:shadow-md flex flex-col">
-                  <div className="flex gap-3 mb-4">
-                    <div>
-                      <div className="p-2 bg-blue-50 rounded-lg">
-                        <FileText className="w-5 h-5 text-blue-600  bg-blue-50 rounded-lg" />
-                      </div>
-                    </div>
-
-                    <div>
-                      <h3 className="font-medium">Тестирвщик</h3>
-                      <div className="flex items-center gap-2 text-sm text-gray-600">
-                        <span>От: 14 000₽</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-600 mb-4">
-                    <Calendar className="w-4 h-4" />
-                    <span>Опыт: 1 месяц</span>
-                  </div>
-
-                  <Button
-                    size={"sm"}
-                    variant={"outline"}
-                    className="mt-auto text-sm font-mono rounded-lg">
-                    Посмотреть
-                  </Button>
-                </div>
+                <StudentResume position={"Web"} experience={1}></StudentResume>
+                <StudentResume position={"Повар"} salary={15000} experience={6}></StudentResume>
+                <StudentResume position={"Тестирвщик"} salary={20000} experience={16}></StudentResume>
               </div>
             </div>
 

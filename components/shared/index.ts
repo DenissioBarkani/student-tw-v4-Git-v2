@@ -15,3 +15,4 @@ export { HardSkillsChart } from "./student-profile/hard-skills-chart";
 export { MyRadioGroup } from "./my-radio-group";
 export { StudentPortfolioList } from "./student-profile/student-portfolio-list";
 export { StudentProjectCard } from "./student-profile/student-project-card";
+export { StudentResume } from "./student-profile/student-resume"

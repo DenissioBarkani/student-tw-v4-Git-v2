@@ -2,6 +2,10 @@
 
 import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
 
+interface Props {
+  className?: string;
+}
+
 const hardSkillsData = [
   {
     name: "C++",
@@ -29,7 +33,7 @@ const hardSkillsData = [
   },
 ];
 
-export function HardSkillsChart() {
+export function HardSkillsChart({ className }: Props) {
   return (
     <div className="h-[300px] w-full">
       <ResponsiveContainer width="100%" height="100%">
