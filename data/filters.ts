@@ -22,18 +22,18 @@ export const employersFilters: FilterSection[] = [
       { value: "graduate", label: "Выпускник" },
     ],
   },
-  {
-    title: "Направление",
-    type: "checkbox",
-    options: [
-      { text: "Frontend", value: "frontend" },
-      { text: "Backend", value: "backend" },
-      { text: "DevOps", value: "devops" },
-      { text: "Android", value: "android" },
-      { text: "iOS", value: "ios" },
-      { text: "Data Science", value: "data-science" },
-    ],
-  },
+  // {
+  //   title: "Направление",
+  //   type: "checkbox",
+  //   options: [
+  //     { text: "Frontend", value: "frontend" },
+  //     { text: "Backend", value: "backend" },
+  //     { text: "DevOps", value: "devops" },
+  //     { text: "Android", value: "android" },
+  //     { text: "iOS", value: "ios" },
+  //     { text: "Data Science", value: "data-science" },
+  //   ],
+  // },
   {
     title: "Формат работы",
     type: "checkbox",
@@ -58,16 +58,16 @@ export const studentsFilters: FilterSection[] = [
       { value: "80k", label: "от 80 000 ₽" },
     ],
   },
-  {
-    title: "Размер компании",
-    type: "radio",
-    options: [
-      { value: "default", label: "Любой" },
-      { value: "startup", label: "Стартап (до 50 человек)" },
-      { value: "medium", label: "Средняя (50-500 человек)" },
-      { value: "large", label: "Крупная (500+ человек)" },
-    ],
-  },
+  // {
+  //   title: "Размер компании",
+  //   type: "radio",
+  //   options: [
+  //     { value: "default", label: "Любой" },
+  //     { value: "startup", label: "Стартап (до 50 человек)" },
+  //     { value: "medium", label: "Средняя (50-500 человек)" },
+  //     { value: "large", label: "Крупная (500+ человек)" },
+  //   ],
+  // },
   {
     title: "Технологии",
     type: "checkbox",

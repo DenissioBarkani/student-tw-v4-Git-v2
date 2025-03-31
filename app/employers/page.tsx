@@ -14,7 +14,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { employersFilters } from '@/data/filters';
+import { employersFilters } from "@/data/filters";
 
 // import { Button } from "@/components/ui/button";
 // import { Card } from "@/components/ui/card";
@@ -41,25 +41,14 @@ export default function EmployersPage() {
 
           <div className="mb-5">
             <div className="flex gap-4">
-              <Select>
+              <Select defaultValue="light">
                 <SelectTrigger className="w-[180px]">
-                  <SelectValue placeholder="Theme" />
+                  <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="light">Light</SelectItem>
-                  <SelectItem value="dark">Dark</SelectItem>
-                  <SelectItem value="system">System</SelectItem>
-                </SelectContent>
-              </Select>
-
-              <Select>
-                <SelectTrigger className="w-[180px]">
-                  <SelectValue placeholder="Theme" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="light">Light</SelectItem>
-                  <SelectItem value="dark">Dark</SelectItem>
-                  <SelectItem value="system">System</SelectItem>
+                  <SelectItem value="light">20 профилей</SelectItem>
+                  <SelectItem value="dark">30 профилей</SelectItem>
+                  <SelectItem value="system">50 профилей</SelectItem>
                 </SelectContent>
               </Select>
             </div>

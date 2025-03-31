@@ -23,25 +23,27 @@ export default function ProductPage() {
                 тренды и находи новые решения на оплачиваемой стажировке в МТС
                 Финтех.
               </p>
-              <Button className="mt-auto self-start" size={"lgx2"}>
+              <Button className="mt-auto self-start" textSize={"lg"} size={"lgx2"}>
                 Подать заявку
               </Button>
             </div>
 
-            <div className=" flex-shrink-0 w-[300px] h-[300px] rounded-xl overflow-hidden ml-8">
+            <div className="flex-shrink-0 w-[300px] h-[300px] rounded-xl overflow-hidden ml-8">
               <Image
-                src={"/company/frame_1948757295_small.png"}
-                width={1140}
-                height={900}
-                alt={"name"}
-                className="h-full w-full object-center"
+                src="/company/frame_1948757295_small.webp"
+                width={1500}
+                height={876}
+                alt="MTS Fintech"
+                className="w-full h-full object-cover"
+                priority
+                // style={{ width: "100%", height: "100%" }}
               />
             </div>
           </div>
         </section>
 
         <div className="p-12 mb-12 shadow col-span-2 rounded-3xl border">
-          <div>
+          <div className="mb-4">
             <Title
               className="font-extrabold mb-4"
               size="lg"
@@ -53,9 +55,9 @@ export default function ProductPage() {
             </p>
           </div>
 
-          <div>
+          <div className="mb-4">
             <h3 className="font-semibold mb-2">Сферы деятельности</h3>
-            <div className="flex flex-wrap gap-2 mb-4">
+            <div className="flex flex-wrap gap-2">
               <Tag variant="blue">Информационные технологии</Tag>
               <Tag variant="blue">Системная интеграция</Tag>
               <Tag variant="blue">Интернет</Tag>
@@ -63,7 +65,7 @@ export default function ProductPage() {
             </div>
           </div>
 
-          <div className="pt-2 text-sm text-muted-foreground">
+          <div className="text-sm text-muted-foreground">
             <h3 className="font-semibold mb-2">Официальный сайт </h3>
             <Link
               href="https://mts.ru"
