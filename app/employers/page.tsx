@@ -14,7 +14,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { employersFilters } from '@/lib/config/filters';
+import { employersFilters } from '@/data/filters';
 
 // import { Button } from "@/components/ui/button";
 // import { Card } from "@/components/ui/card";

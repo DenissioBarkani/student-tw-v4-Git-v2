@@ -15,8 +15,8 @@ import {
   PaginationEllipsis,
   PaginationNext,
 } from "@/components/ui/pagination";
-import { companiesData } from "@/lib/config/company";
-import { studentsFilters } from "@/lib/config/filters";
+import { companiesData } from "@/data/company";
+import { studentsFilters } from "@/data/filters";
 
 export default function Home() {
   return (

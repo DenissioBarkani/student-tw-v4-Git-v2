@@ -27,13 +27,13 @@ export const Header: React.FC<Props> = ({ className }) => {
               </div>
             </div>
           </Link>
+          <Link href="/" className="hover:text-primary transition-colors">
+            Стажировки
+          </Link>
           <Link
             href="/employers"
             className="hover:text-primary transition-colors">
             Работодателям
-          </Link>
-          <Link href="/" className="hover:text-primary transition-colors">
-            Студентам
           </Link>
         </div>
 

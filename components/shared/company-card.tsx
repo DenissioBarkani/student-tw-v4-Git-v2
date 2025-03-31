@@ -40,13 +40,13 @@ export const CompanyCard: React.FC<Props> = ({
         "h-full flex flex-col rounded-2xl border shadow-sm overflow-hidden transition-all duration-300 hover:shadow-lg",
         className
       )}>
-      <div className="relative bg-secondary h-56">
+      <div className="relative h-56">
         <Image
           src={imageUrl}
           width={1140}
           height={900}
           alt={name}
-          className=" h-full object-cover"
+          className="h-full object-cover"
         />
       </div>
 
