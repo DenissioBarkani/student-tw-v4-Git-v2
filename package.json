@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "das": "concurrently \"npm run dev\" \"npm run server\"",
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "server": "json-server -w server/db.json -p 3006"
   },
   "dependencies": {
     "@radix-ui/react-checkbox": "^1.1.4",
@@ -29,8 +31,10 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "concurrently": "^9.1.2",
     "eslint": "^9",
     "eslint-config-next": "15.2.2-canary.0",
+    "json-server": "^1.0.0-beta.3",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
