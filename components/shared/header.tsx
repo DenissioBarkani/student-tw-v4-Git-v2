@@ -3,17 +3,17 @@ import { cn } from "@/lib/utils";
 import React from "react";
 import { Container } from "./container";
 import Image from "next/image";
-
-import { Search, User } from "lucide-react";
-// import { SearchInput } from "./search-input";
+import { User } from "lucide-react";
 import Link from "next/link";
 import { Button } from "../ui";
+import { SearchAi } from "./search-ai";
 
 interface Props {
   className?: string;
 }
 
 export const Header: React.FC<Props> = ({ className }) => {
+
   return (
     <header className={cn("border border-b", className)}>
       <Container className="flex items-center justify-between py-8">
@@ -37,20 +37,7 @@ export const Header: React.FC<Props> = ({ className }) => {
           </Link>
         </div>
 
-        <div className="mx-10 flex-1">
-          <div
-            className={
-              "flex rounded-2xl flex-1 justify-between h-11 z-30 relative"
-            }>
-            <Search className="absolute top-1/2 translate-y-[-50%] left-3 h-5 text-gray-400" />
-            <input
-              className="rounded-2xl outline-none w-full bg-gray-100 pl-11"
-              type="text"
-              placeholder="Поиск..."
-              defaultValue=""
-            />
-          </div>
-        </div>
+        <SearchAi></SearchAi>
 
         {/* Правая часть */}
         <div className="flex items-center gap-3">

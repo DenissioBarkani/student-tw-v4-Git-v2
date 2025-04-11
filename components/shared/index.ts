@@ -11,6 +11,8 @@ export { StudentCard } from "./employers/student-card";
 export { Footer } from "./footer";
 export { Tag } from "./tag";
 export { HardSkillsChart } from "./student-profile/hard-skills-chart";
-export { MyRadioGroup } from "./my-radio-group";
+export { FilterRadioGroup } from "./filter-radio-group";
 export { StudentProjectCard } from "./student-profile/student-project-card";
 export { StudentResume } from "./student-profile/student-resume"
+export { SoftSkillsChart } from "./student-profile/soft-skills-chart";
+export { SearchAi } from "./search-ai";

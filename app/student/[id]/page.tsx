@@ -3,6 +3,7 @@
 import {
   Container,
   HardSkillsChart,
+  SoftSkillsChart,
   StudentProjectCard,
   StudentResume,
   Title,
@@ -51,7 +52,7 @@ export default function StudentProfile() {
               <div className="grid grid-cols-2 gap-6">
                 <div>
                   <h3 className="text-sm mb-2">Soft Skills</h3>
-                  {/* <SoftSkillsChart /> */}
+                  <SoftSkillsChart />
                 </div>
                 <div>
                   <h3 className="text-sm mb-2">Hard Skills</h3>

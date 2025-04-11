@@ -42,7 +42,7 @@ export default function ProductPage() {
           </div>
         </section>
 
-        <div className="p-12 mb-12 shadow col-span-2 rounded-3xl border">
+        <div className="p-12 mb-12 shadow col-span-2 rounded-xl border">
           <div className="mb-4">
             <Title
               className="font-extrabold mb-4"
