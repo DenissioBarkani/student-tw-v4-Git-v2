@@ -16,3 +16,4 @@ export { StudentProjectCard } from "./student-profile/student-project-card";
 export { StudentResume } from "./student-profile/student-resume"
 export { SoftSkillsChart } from "./student-profile/soft-skills-chart";
 export { SearchAi } from "./search-ai";
+export { SearchAiV2 } from "./search-ai-v2";

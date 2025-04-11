@@ -4,15 +4,24 @@ import { cn } from "@/lib/utils";
 import { Paperclip, Search, Send, Sparkles, X } from "lucide-react";
 import { useRef, useState } from "react";
 
-interface SearchAiProps {
+interface SearchAiV2Props {
   className?: string;
 }
 
-export const SearchAi = ({ className }: SearchAiProps) => {
+export const SearchAiV2 = ({ className }: SearchAiV2Props) => {
   const [changeMode, setChangeMode] = useState(false);
   const [hasFile, setHasFile] = useState(false);
   const [hasValue, setHasValue] = useState("");
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  const autoResizeTextarea = () => {
+    if (textareaRef.current) {
+      textareaRef.current.style.height = "auto";
+      textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
+    }
+  };
+
 
   const handleFileClick = () => {
     fileInputRef.current?.click();
@@ -32,8 +41,8 @@ export const SearchAi = ({ className }: SearchAiProps) => {
   return (
     <>
       <div className={cn("mx-10 flex-1", className)}>
-        <div className="flex rounded-2xl flex-1 justify-between h-11 z-30 relative">
-          <div className="absolute top-1/2 translate-y-[-50%] left-2 flex items-center">
+        <div className="flex rounded-2xl flex-1 justify-between h-11 z-30">
+          <div className="flex items-center bg-gray-100 p-1 rounded-l-2xl">
             <div className="flex items-center rounded-lg gap-1">
               <button
                 onClick={() => setChangeMode((prev) => !prev)}
@@ -58,26 +67,40 @@ export const SearchAi = ({ className }: SearchAiProps) => {
             </div>
           </div>
           {/* центр */}
-          <input
-            onChange={(event) => setHasValue(event.target.value)}
-            className="rounded-2xl outline-none w-full bg-gray-100 pl-20 pr-19"
-            type="text"
-            placeholder={changeMode ? "Найти с помощью AI..." : "Поиск..."}
-            defaultValue=""
-          />
-
-          
+          <div className="flex-1 flex items-center bg-gray-100 relative">
+            {!changeMode ? (
+              <input
+                onChange={(event) => setHasValue(event.target.value)}
+                className="rounded-2xl outline-none w-full p-2 bg-gray-100"
+                type="text"
+                placeholder={"Поиск..."}
+                defaultValue=""
+              />
+            ) : (
+              <>
+                {" "}
+                <div className="flex-1 flex"></div>
+                <textarea
+                  ref={textareaRef}
+                  onInput={autoResizeTextarea}
+                  suppressHydrationWarning
+                  className="outline-none w-full p-2 min-h-[42px] max-h-[200px] top-0.5 bg-gray-100 rounded-2xl resize-none absolute left-0 overflow-y-auto"
+                  placeholder={"Найти с помощью AI..."}
+                  defaultValue=""
+                  rows={1}
+                />
+              </>
+            )}
+          </div>
 
           {/* Правая часть */}
-          <div className="absolute top-1/2 translate-y-[-50%] right-3 flex items-center">
+          <div className="flex items-center bg-gray-100 p-1 rounded-r-2xl">
             <div className="flex items-center">
               {!changeMode && (
                 <button
                   className={cn(
                     "hidden p-1.5 mr-1 rounded-md text-foreground/50 hover:text-foreground",
-                    hasValue || hasFile
-                      ? "text-foreground block"
-                      : "hidden"
+                    hasValue || hasFile ? "text-foreground block" : "hidden"
                   )}
                   title="Прикрепить файл">
                   <X size={20} className="" />
