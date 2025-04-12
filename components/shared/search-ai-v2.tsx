@@ -42,7 +42,7 @@ export const SearchAiV2 = ({ className }: SearchAiV2Props) => {
     <>
       <div className={cn("mx-10 flex-1", className)}>
         <div className="flex rounded-2xl flex-1 justify-between h-11 z-30">
-          <div className="flex items-center bg-gray-100 p-1 rounded-l-2xl">
+          <div className="flex items-center bg-gray-100 p-1 pl-2 rounded-l-2xl">
             <div className="flex items-center rounded-lg gap-1">
               <button
                 onClick={() => setChangeMode((prev) => !prev)}
@@ -94,7 +94,7 @@ export const SearchAiV2 = ({ className }: SearchAiV2Props) => {
           </div>
 
           {/* Правая часть */}
-          <div className="flex items-center bg-gray-100 p-1 rounded-r-2xl">
+          <div className="flex items-center bg-gray-100 p-1 pr-2 rounded-r-2xl">
             <div className="flex items-center">
               {!changeMode && (
                 <button

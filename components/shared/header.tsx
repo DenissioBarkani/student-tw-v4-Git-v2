@@ -38,7 +38,7 @@ export const Header: React.FC<Props> = ({ className }) => {
           </Link>
         </div>
 
-        <SearchAiV2></SearchAiV2>
+        <SearchAi></SearchAi>
 
         {/* Правая часть */}
         <div className="flex items-center gap-3">
