@@ -7,7 +7,7 @@ import { User } from "lucide-react";
 import Link from "next/link";
 import { Button } from "../ui";
 import { SearchAi } from "./search-ai";
-import { SearchAiV2 } from "./search-ai-v2";
+// import { SearchAiV2 } from "./search-ai-v2";
 
 interface Props {
   className?: string;

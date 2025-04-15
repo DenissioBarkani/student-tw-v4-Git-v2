@@ -7,12 +7,13 @@ import Image from "next/image"; // Импортируем компонент Ima
 import { cn } from "@/lib/utils";
 import { Tag } from "./tag";
 
+
 interface CompanyTag {
   id: number;
   text: string;
 }
 
-interface Props {
+export interface CompanyProps {
   id: number;
   name: string;
   imageUrl: string;
@@ -23,7 +24,7 @@ interface Props {
   className?: string;
 }
 
-export const CompanyCard: React.FC<Props> = ({
+export const CompanyCard: React.FC<CompanyProps> = ({
   id,
   name,
   imageUrl,
@@ -33,6 +34,7 @@ export const CompanyCard: React.FC<Props> = ({
   places,
   className,
 }) => {
+
   return (
     <Link
       href={`/company/${id}`}
