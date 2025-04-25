@@ -49,6 +49,8 @@ export const CompanyCard: React.FC<CompanyProps> = ({
           height={900}
           alt={name}
           className="h-full object-cover"
+          loading={id > 5 ? "eager" : "lazy"} 
+          priority={id <= 5 ? false : true}
         />
       </div>
 

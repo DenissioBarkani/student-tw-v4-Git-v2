@@ -1,53 +1,14 @@
 {
-  "products": [
-    {
-      "id": 1,
-      "name": "Смартфон XYZ",
-      "description": "Мощный смартфон с отличной камерой",
-      "price": 29999,
-      "characteristics": {
-        "процессор": "Snapdragon 888",
-        "память": "8GB",
-        "экран": "6.7 дюймов",
-        "камера": "48MP"
-      }
-    },
-    {
-      "id": 2,
-      "name": "Ноутбук ABC",
-      "description": "Легкий и производительный ноутбук",
-      "price": 49999,
-      "characteristics": {
-        "процессор": "Intel i7",
-        "память": "16GB",
-        "диск": "512GB SSD",
-        "экран": "15.6 дюймов"
-      }
-    },
-    {
-      "id": 3,
-      "name": "Планшет DEF",
-      "description": "Универсальный планшет для работы и развлечений",
-      "price": 19999,
-      "characteristics": {
-        "процессор": "Apple M1",
-        "память": "4GB",
-        "диск": "128GB",
-        "экран": "10.9 дюймов"
-      }
-    }
-  ],
-
   "companies": [
     {
       "id": 1,
-      "name": "VK",
-      "imageUrl": "https://it.fut.ru/api/storage/api/files/show-img/0e88ee2e-8398-48f8-8c7a-6997032b6b07_small.webp",
-      "description": "Развивайте интернет-экосистему вместе с ведущей технологической компанией",
+      "name": "Начни карьеру в ИТ",
+      "imageUrl": "https://cdn-it.fut.ru/api/storage/api/files/show-img/3481cc66-fece-4a4c-85e8-ba7b50251c2c_small.webp",
+      "description": "На стажировке тебя ждет полное погружение в ИТ-индустрию. С первого дня ты будешь работать с реальными задачами и набираться опыта, а ментор и коллеги будут поддерживать тебя и делиться своей экспертизой",
       "tags": [
         { "id": 1, "text": "Удаленка" },
-        { "id": 2, "text": "Молодая команда" },
-        { "id": 3, "text": "Стартап" }
+        { "id": 2, "text": "Берут выпускников" },
+        { "id": 3, "text": "Гибкий график" }
       ],
       "deadline": "10 марта",
       "places": 8
@@ -688,6 +649,53 @@
       ],
       "deadline": "20 февраля",
       "places": 15
+    }
+  ],
+
+  "students": [
+    {
+      "id": "1",
+      "name": "Иванов Иван Иванович",
+      "university": "МГУ им. М.В. Ломоносова",
+      "course": 3,
+      "specialty": "Прикладная информатика",
+      "salary": 50000,
+      "imageUrl": "/company/cardStudent.jpg",
+      "desiredPositions": ["Frontend", "Backend"],
+      "skills": ["JavaScript", "React", "Node.js", "TypeScript"]
+    },
+    {
+      "id": "2",
+      "name": "Петрова Анна Сергеевна",
+      "university": "СПбГУ",
+      "course": 4,
+      "specialty": "Программная инженерия",
+      "salary": 60000,
+      "imageUrl": "/company/cardStudentGirl.webp",
+      "desiredPositions": ["Fullstack", "DevOps"],
+      "skills": ["Python", "Django", "Docker", "AWS"]
+    },
+    {
+      "id": "3",
+      "name": "Смирнов Алексей Дмитриевич",
+      "university": "МФТИ",
+      "course": 2,
+      "specialty": "Компьютерные науки",
+      "salary": 45000,
+      "imageUrl": "/company/cardStudent.jpg",
+      "desiredPositions": ["Mobile", "Frontend"],
+      "skills": ["Swift", "Kotlin", "React Native", "UI/UX"]
+    },
+    {
+      "id": "4",
+      "name": "Козлова Екатерина Андреевна",
+      "university": "ВШЭ",
+      "course": 3,
+      "specialty": "Бизнес-информатика",
+      "salary": 55000,
+      "imageUrl": "/company/cardStudentGirl.webp",
+      "desiredPositions": ["QA", "DevOps"],
+      "skills": ["Testing", "Automation", "CI/CD", "Linux"]
     }
   ]
 }

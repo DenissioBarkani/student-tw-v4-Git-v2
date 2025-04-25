@@ -6,7 +6,6 @@ export { Filters } from "./filters";
 export { FilterCheckbox } from "./filter-checkbox";
 export { CompanyCard } from "./company-card";
 export { CheckboxFiltersGroup } from "./checkbox-filters-group";
-export { StudentProfilesList } from "./employers/student-profiles-list";
 export { StudentCard } from "./employers/student-card";
 export { Footer } from "./footer";
 export { Tag } from "./tag";
@@ -15,5 +14,4 @@ export { FilterRadioGroup } from "./filter-radio-group";
 export { StudentProjectCard } from "./student-profile/student-project-card";
 export { StudentResume } from "./student-profile/student-resume"
 export { SoftSkillsChart } from "./student-profile/soft-skills-chart";
-export { SearchAi } from "./search-ai";
 export { SearchAiV2 } from "./search-ai-v2";

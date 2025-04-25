@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import { CompanyCard, CompanyProps } from "@/components/shared/company-card";
@@ -7,13 +8,9 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { Categories, Container, Filters, Title } from "@/components/shared";
 import { studentsFilters } from "@/data/filters";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { useCompanyContext } from "@/lib/hooks/CompanyContext";
+
+import { X } from "lucide-react";
 
 interface PaginationData {
   pages: number;
@@ -22,16 +19,27 @@ interface PaginationData {
 
 export default function Home() {
   const searchParams = useSearchParams();
-  const [products, setProducts] = useState<CompanyProps[]>([]);
+
   const [loading, setLoading] = useState(true);
   const currentPage = parseInt(searchParams.get("page") || "1");
-  // const perPage = 9;
-  const [perPage, setPerPage] = useState(9);
+  const perPage = 12;
+
+  // const [products, setProducts] = useState<CompanyProps[]>([]);
+  const { companies, setCompanies, search, setSearch } = useCompanyContext();
+
+  // const [perPage, setPerPage] = useState(12);
   // const perPage = parseInt(searchParams.get("pageSize") || "9");
   const [paginationData, setPaginationData] = useState<PaginationData>({
     pages: 0,
     totalItems: 0,
   });
+
+  // useEffect(() => {
+  //   setPaginationData({
+  //     pages: Math.ceil(companies.length / 12),
+  //     totalItems: companies.length,
+  //   });
+  // }, [companies]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -40,21 +48,24 @@ export default function Home() {
         const data = await fetchCompany(currentPage, perPage);
         console.log(data);
 
-        setProducts(data.companyData);
+        setCompanies(data.companyData);
         setPaginationData({
           pages: data.pages,
           totalItems: data.items,
         });
+        setSearch(false);
       } catch (error) {
         console.error("Error loading products:", error);
-        setProducts([]);
+        setCompanies([]);
+        setSearch(false);
       } finally {
         setLoading(false);
       }
     };
-
-    fetchData();
-  }, [currentPage, perPage]);
+    if (!search) {
+      fetchData();
+    }
+  }, [currentPage, search, setCompanies, setSearch]);
 
   return (
     <Container className="mt-10">
@@ -66,9 +77,9 @@ export default function Home() {
           <Filters sections={studentsFilters} />
         </div>
         <div className="flex-1">
-          <Categories className="mb-8" />
+          {/* <Categories className="mb-8" /> */}
 
-          <Select 
+          {/* <Select 
             defaultValue="9"
             onValueChange={(value) => setPerPage(Number(value))}>
             <SelectTrigger size="sm">
@@ -79,14 +90,30 @@ export default function Home() {
               <SelectItem value="12">12</SelectItem>
               <SelectItem value="15">15</SelectItem>
             </SelectContent>
-          </Select>
+          </Select> */}
 
           <div className="flex flex-col gap-8">
             {loading && <div className="h-screen">loading...</div>}
 
+            {search && (
+              <>
+                <div className="flex items-end justify-between">
+                  <div className="text-muted-foreground">
+                    Найдено результатов: {companies.length}
+                  </div>
+                  <button
+                    onClick={() => setSearch(false)}
+                    className="flex items-center gap-2 px-3 py-2 rounded-md bg-secondary hover:bg-secondary-foreground/10 text-secondary-foreground/70 transition-colors"
+                    title="Сбросить поиск">
+                    <X size={16} />
+                    Сбросить поиск
+                  </button>
+                </div>
+              </>
+            )}
             {!loading && (
               <div className="grid grid-cols-3 gap-[14px]">
-                {products.map((company, index) => (
+                {companies.map((company, index) => (
                   <CompanyCard
                     key={index}
                     id={company.id}
@@ -101,7 +128,7 @@ export default function Home() {
               </div>
             )}
 
-            {paginationData && paginationData.pages > 1 && (
+            {!search && paginationData && paginationData.pages > 1 && (
               <PaginationWithLinks
                 page={currentPage}
                 pageSize={perPage}

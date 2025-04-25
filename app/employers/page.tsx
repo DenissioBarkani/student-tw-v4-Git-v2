@@ -1,26 +1,49 @@
 "use client";
 import {
-  Categories,
+  // Categories,
   Container,
   Filters,
-  StudentProfilesList,
+  StudentCard,
   Title,
 } from "@/components/shared";
-
+import { Student } from "@/components/shared/employers/student-card";
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationPrevious,
+  PaginationLink,
+  PaginationEllipsis,
+  PaginationNext,
+} from "@/components/ui/pagination";
+
+// import {
+//   Select,
+//   SelectContent,
+//   SelectItem,
+//   SelectTrigger,
+//   SelectValue,
+// } from "@/components/ui/select";
 import { employersFilters } from "@/data/filters";
+import { useEffect, useState } from "react";
 
 // import { Button } from "@/components/ui/button";
 // import { Card } from "@/components/ui/card";
 // import Link from "next/link";
 
 export default function EmployersPage() {
+  const [students, setStudents] = useState<Student[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch("http://localhost:3006/students");
+      const data = await response.json();
+      console.log(data);
+      setStudents(data);
+    };
+    fetchData();
+  }, []);
+
   return (
     <Container className="mt-10">
       <div className=" mb-8">
@@ -37,9 +60,9 @@ export default function EmployersPage() {
           <Filters sections={employersFilters} />
         </div>
         <div className="flex-1">
-          <Categories className="mb-8" />
+          {/* <Categories className="mb-8" /> */}
 
-          <div className="mb-5">
+          {/* <div className="mb-5">
             <div className="flex gap-4">
               <Select defaultValue="light">
                 <SelectTrigger className="w-[180px]">
@@ -52,10 +75,46 @@ export default function EmployersPage() {
                 </SelectContent>
               </Select>
             </div>
-          </div>
+          </div> */}
 
           <div className="flex flex-col">
-            <StudentProfilesList></StudentProfilesList>
+            <div className="grid gap-6">
+              {students.map((student) => (
+                <StudentCard key={student.id} student={student} />
+              ))}
+
+              {/* <StudentCard id={"1"} />
+              <StudentCard id={"2"} />
+              <StudentCard id={"3"} />
+              <StudentCard id={"4"} /> */}
+
+              {students.length > 0 && (
+                <Pagination className="mt-4">
+                  <PaginationContent>
+                    <PaginationItem>
+                      <PaginationPrevious href="#" />
+                    </PaginationItem>
+                    <PaginationItem>
+                      <PaginationLink href="#" isActive>
+                        1
+                      </PaginationLink>
+                    </PaginationItem>
+                    <PaginationItem>
+                      <PaginationLink href="#">2</PaginationLink>
+                    </PaginationItem>
+                    <PaginationItem>
+                      <PaginationLink href="#">3</PaginationLink>
+                    </PaginationItem>
+                    <PaginationItem>
+                      <PaginationEllipsis />
+                    </PaginationItem>
+                    <PaginationItem>
+                      <PaginationNext href="#" />
+                    </PaginationItem>
+                  </PaginationContent>
+                </Pagination>
+              )}
+            </div>
           </div>
         </div>
       </div>

@@ -68,15 +68,17 @@ export const studentsFilters: FilterSection[] = [
     title: "Оплата",
     type: "radio",
     options: [
+      { value: "any", text: "Не важно" },
       { value: "paid", text: "Оплачиваемая" },
       { value: "unpaid", text: "Неоплачиваемая" },
     ],
   },
   {
     title: "Берут курс",
-    type: "checkbox",
+    type: "radio",
     options: [
-      { value: "любой", text: "Не важно" },
+      { value: "любой", text: "Любой" },
+      { value: "1", text: "1 курс" },
       { value: "2", text: "2 курс" },
       { value: "3", text: "3 курс" },
     ],

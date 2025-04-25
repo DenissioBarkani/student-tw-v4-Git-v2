@@ -1,8 +1,193 @@
+"use client";
 import { Container, Tag, Title } from "@/components/shared";
 import { Button } from "@/components/ui";
 import Link from "next/link";
 import Image from "next/image"; // Импортируем компонент Image
+import { useState } from "react";
+
+type Block = {
+  title: string;
+  content: string[];
+};
+
+type Position = {
+  id: string;
+  title: string;
+  location: string;
+  blocks: Block[];
+};
+
 export default function ProductPage() {
+  const [selectedPosition, setSelectedPosition] = useState<string>("backend");
+
+  const positions: Position[] = [
+    {
+      id: "backend",
+      title: "Backend",
+      location: "Вся Россия",
+      blocks: [
+        {
+          title: "Ты подходишь, если:",
+          content: [
+            "знаешь Java, C#",
+            "работал с Git, Jira, Confluence",
+            "понимаешь современные принципы и технологии системной интеграции: Kafka, REST",
+            "понимаешь принципы микросервисной архитектуры",
+          ],
+        },
+        {
+          title: "На стажировке ты будешь:",
+          content: [
+            "взаимодействовать с серверной частью веб-приложения",
+            "исправлять баги и улучшать пользовательский опыт",
+            "тестировать собственный код",
+            "оптимизировать и рефакторить существующие решения",
+          ],
+        },
+        {
+          title: "Бонусы и преимущества:",
+          content: [
+            "гибкий график работы",
+            "возможность удаленной работы",
+            "обучение и развитие",
+            "корпоративные мероприятия",
+          ],
+        },
+      ],
+    },
+    {
+      id: "frontend",
+      title: "Frontend",
+      location: "Москва",
+      blocks: [
+        {
+          title: "Ты подходишь, если:",
+          content: [
+            "знаешь JavaScript/TypeScript",
+            "опыт работы с React/Next.js",
+            "понимание принципов UI/UX",
+            "знание современных инструментов разработки",
+          ],
+        },
+        {
+          title: "На стажировке ты будешь:",
+          content: [
+            "разработка пользовательского интерфейса",
+            "оптимизация производительности",
+            "работа с API",
+            "тестирование и отладка",
+          ],
+        },
+      ],
+    },
+    {
+      id: "fullstack",
+      title: "Fullstack",
+      location: "Санкт-Петербург",
+      blocks: [
+        {
+          title: "Ты подходишь, если:",
+          content: [
+            "знание frontend и backend технологий",
+            "опыт работы с базами данных",
+            "понимание принципов DevOps",
+            "умение работать в команде",
+          ],
+        },
+        {
+          title: "На стажировке ты будешь:",
+          content: [
+            "разработка полного стека приложения",
+            "интеграция различных сервисов",
+            "оптимизация работы приложения",
+            "участие в планировании архитектуры",
+          ],
+        },
+        {
+          title: "Условия работы:",
+          content: [
+            "офис в центре города",
+            "комфортное рабочее место",
+            "современное оборудование",
+            "медицинская страховка",
+          ],
+        },
+      ],
+    },
+    {
+      id: "devops",
+      title: "DevOps",
+      location: "Вся Россия",
+      blocks: [
+        {
+          title: "Ты подходишь, если:",
+          content: [
+            "знание Docker, Kubernetes",
+            "опыт работы с CI/CD",
+            "понимание принципов мониторинга",
+            "знание облачных платформ",
+          ],
+        },
+        {
+          title: "На стажировке ты будешь:",
+          content: [
+            "настройка и поддержка инфраструктуры",
+            "автоматизация процессов разработки",
+            "мониторинг и логирование",
+            "обеспечение безопасности",
+          ],
+        },
+        {
+          title: "Карьерный рост:",
+          content: [
+            "четкий план развития",
+            "регулярные оценки",
+            "возможность повышения",
+            "участие в конференциях",
+          ],
+        },
+      ],
+    },
+    {
+      id: "qa",
+      title: "QA Engineer",
+      location: "Москва",
+      blocks: [
+        {
+          title: "Ты подходишь, если:",
+          content: [
+            "знание методологий тестирования",
+            "опыт работы с инструментами тестирования",
+            "понимание принципов автоматизации",
+            "знание SQL и API",
+          ],
+        },
+        {
+          title: "На стажировке ты будешь:",
+          content: [
+            "разработка тест-кейсов",
+            "проведение тестирования",
+            "автоматизация тестов",
+            "анализ результатов",
+          ],
+        },
+        {
+          title: "Обучение и развитие:",
+          content: [
+            "внутренние тренинги",
+            "курсы и сертификации",
+            "менторство",
+            "обмен опытом",
+          ],
+        },
+      ],
+    },
+    
+  ];
+
+  const currentPosition =
+    positions.find((pos) => pos.id === selectedPosition) || positions[0];
+
   return (
     <div>
       <Container className="mt-10">
@@ -13,17 +198,18 @@ export default function ProductPage() {
                 className="font-extrabold mb-5"
                 size="lg"
                 text={"Начни карьеру вместе с МТС Финтех"}></Title>
-              <p className="mb-5 pr-12">
-                Получай востребованный опыт, задавай тренды и находи новые
-                решения на оплачиваемой стажировке в МТС Финтех. Получай
-                востребованный опыт, задавай тренды и находи новые решения на
-                оплачиваемой стажировке в МТС Финтех. Получай востребованный
-                опыт, задавай тренды и находи новые решения на оплачиваемой
-                стажировке в МТС Финтех. Получай востребованный опыт, задавай
-                тренды и находи новые решения на оплачиваемой стажировке в МТС
-                Финтех.
+              <p className="mb-5 pr-12 max-w-[600px]">
+                Мы приглашаем стажёров от 16 лет, и нам не важно, какие вузы и
+                курсы ты закончил. На стажировке тебя ждёт полное погружение в
+                ИТ-индустрию. С первого дня ты будешь работать с реальными
+                задачами и набираться опыта, а ментор и коллеги будут
+                поддерживать тебя и делиться своей экспертизой. Ну что, готов
+                стартануть в ИТ?
               </p>
-              <Button className="mt-auto self-start" textSize={"lg"} size={"lgx2"}>
+              <Button
+                className="mt-auto self-start"
+                textSize={"lg"}
+                size={"lgx2"}>
                 Подать заявку
               </Button>
             </div>
@@ -111,15 +297,13 @@ export default function ProductPage() {
           </div>
           <div className="shadow col-span-3 p-8 rounded-3xl border">
             <h3 className="text-lg font-medium mb-3 text-primary/90">
-              Зарплата и бонусы
+              Обучение
             </h3>
             <p className="text-slate-500">
-              Размер твоей зарплаты будет зависеть от направления стажировки,
-              региона и количества рабочих часов в неделю. А еще тебя ждут
-              бонусы: единая подписка МТС Premium с онлайн-кинотеатром KION,
-              доступом к сервисам МТС Музыка и Строки от МТС, корпоративная
-              связь, курсы и корпоративный университет с гибкими форматами
-              обучения
+              Корпоративный университет, обучение у&nbsp;внешних экспертов,
+              внутренние мероприятия: хакатоны, олимпиады, конференции. Можно
+              освоить новые навыки, прокачать скилы и&nbsp;повысить свою
+              ценность для&nbsp;работодателя
             </p>
           </div>
           <div className="shadow col-span-3 p-8 rounded-3xl border">
@@ -139,77 +323,49 @@ export default function ProductPage() {
             size="lg"
             text={"Реализуй себя в одном из направлений"}></Title>
 
-          <div className="flex flex-row min-h-[400px] max-h-[525px]">
+          <div className="flex flex-row min-h-[550px] max-h-[550px]">
             {/* Вакансии */}
-            <ul className="gap-1 flex flex-col min-w-[240px] pr-4 border-r overflow-y-auto custom-scrollbar-left transform scale-x-[-1]">
-              {" "}
-              {/* Добавлен скролл */}
-              <li className="p-5 bg-secondary-foreground text-secondary rounded-3xl hover:bg-secondary-foreground/90 transform scale-x-[-1]">
-                <h4>Экономика и финансы</h4>
-                <span>Ростов на дону</span>
-              </li>
-              <li className="p-5 rounded-3xl hover:bg-accent transform scale-x-[-1]">
-                <h4>Экономика и финансы</h4>
-                <span>Ростов на дону</span>
-              </li>
-              <li className="p-5 rounded-3xl hover:bg-accent transform scale-x-[-1]">
-                <h4>Экономика и финансы</h4>
-                <span>Ростов на дону</span>
-              </li>
-              <li className="p-5 rounded-3xl hover:bg-accent transform scale-x-[-1]">
-                <h4>Экономика и финансы</h4>
-                <span>Ростов на дону</span>
-              </li>
-              {Array.from({ length: 10 }).map((_, index) => (
+            <ul className="gap-1 flex flex-col min-w-[240px] overflow-y-auto custom-scrollbar-left transform scale-x-[-1]">
+              {positions.map((position) => (
                 <li
-                  key={index}
-                  className="p-5 rounded-3xl hover:bg-accent transform scale-x-[-1]">
-                  <h4>Экономика и финансы {index + 1}</h4>
-                  <span>Ростов на дону</span>
+                  key={position.id}
+                  className={`p-5 rounded-3xl bg-accent transform scale-x-[-1] cursor-pointer ${
+                    selectedPosition === position.id
+                      ? "bg-secondary-foreground text-secondary"
+                      : ""
+                  }`}
+                  onClick={() => setSelectedPosition(position.id)}>
+                  <h4 className="font-semibold">{position.title}</h4>
+                  <span>{position.location}</span>
                 </li>
               ))}
             </ul>
 
             {/* Описание */}
             <div className="flex-1 flex flex-col pl-8">
-              <div className="mb-7 flex-1 overflow-y-auto custom-scrollbar">
+              <div className="mb-4 flex-1 overflow-y-auto custom-scrollbar">
                 <div className="mb-5">
-                  <h3>Научная деятельность</h3>
-                  <span className="text-sm text-muted-foreground">Москва</span>
+                  <h4 className="font-bold text-3xl">
+                    {currentPosition.title}
+                  </h4>
+                  <span className="text-sm text-muted-foreground">
+                    {currentPosition.location}
+                  </span>
                 </div>
-                <p>
-                  <b>В этом направлении тебе предстоит заниматься:</b>
-                </p>
-                <p>
-                  - разработкой новых продуктов (смазочные и битумные материалы)
-                </p>
-                <p>
-                  - обеспечением технического развития продуктового ассортимента
-                  компании
-                </p>
-                <p>
-                  - проведением переговоров с партнерами по предоставлению
-                  технологий
-                </p>
-                <p>
-                  - проведением НИОКР по перспективным направлениям развития
-                </p>
-                <p>- проведением испытаний продуктов</p>
-                <p>
-                  <b>Требования:</b>
-                </p>
-                <p>- высшее химическое образование</p>
-                <p>- знание английского языка на уровне не ниже Intermediate</p>
-                <p>- готовность работать полный день в офисе</p>
-                {/* Добавьте больше текста для тестирования скролла */}
-                {Array.from({ length: 10 }).map((_, index) => (
-                  <p key={index}>
-                    Дополнительный текст для тестирования скролла {index + 1}.
-                  </p>
-                ))}
+                <div className="max-w-3/4">
+                  {currentPosition.blocks.map((block, index) => (
+                    <div key={index} className="mb-6">
+                      <h2 className="mb-1 mt-3 text-lg font-bold">
+                        {block.title}
+                      </h2>
+                      {block.content.map((item, itemIndex) => (
+                        <p key={itemIndex}>- {item}</p>
+                      ))}
+                    </div>
+                  ))}
+                </div>
               </div>
 
-              {/* Кнопка с фиксированным позиционированием */}
               <div className="bottom-0 pt-4">
                 <Button size={"lgx2"} textSize={"lg"} className="w-auto">
                   Подать заявку

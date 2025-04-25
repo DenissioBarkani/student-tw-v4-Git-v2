@@ -6,18 +6,18 @@ import Image from "next/image";
 import { User } from "lucide-react";
 import Link from "next/link";
 import { Button } from "../ui";
-import { SearchAi } from "./search-ai";
-// import { SearchAiV2 } from "./search-ai-v2";
+// import { SearchAi } from "./search-ai";
+import { SearchAiV2 } from "./search-ai-v2";
 
 interface Props {
   className?: string;
 }
 
 export const Header: React.FC<Props> = ({ className }) => {
-
+  //  bg-white fixed top-0 left-0 w-full z-10
   return (
     <header className={cn("border border-b", className)}>
-      <Container className="flex items-center justify-between py-8">
+      <Container className="flex items-center justify-between py-6">
         {/* Левая часть */}
         <div className="flex items-center gap-5">
           <Link href="/">
@@ -38,7 +38,7 @@ export const Header: React.FC<Props> = ({ className }) => {
           </Link>
         </div>
 
-        <SearchAi></SearchAi>
+        <SearchAiV2></SearchAiV2>
 
         {/* Правая часть */}
         <div className="flex items-center gap-3">
