@@ -92,10 +92,7 @@ export const Footer = ({ className }: FooterProps) => {
       <div className="border-t">
         <Container className="py-8">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-            <p className="text-sm text-muted-foreground">
-              © 2024 Название компании. Все права защищены.
-            </p>
-            <div className="flex gap-4 text-sm text-muted-foreground">
+            <div className="flex flex-col text-center md:text-start md:flex-row gap-4 text-sm text-muted-foreground order-1 md:order-2">
               <Link href="#" className="hover:text-primary">
                 Условия использования
               </Link>
@@ -103,6 +100,9 @@ export const Footer = ({ className }: FooterProps) => {
                 Политика конфиденциальности
               </Link>
             </div>
+            <p className="text-sm text-muted-foreground order-2 md:order-1">
+              © 2024 Название компании. Все права защищены.
+            </p>
           </div>
         </Container>
       </div>

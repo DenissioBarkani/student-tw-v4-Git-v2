@@ -19,7 +19,7 @@ function CardHover({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="card-hover"
-      className={cn("rounded-2xl border shadow-sm overflow-hidden transition-all duration-300 hover:shadow-lg", className)}
+      className={cn("rounded-2xl border shadow-sm overflow-hidden transition-all duration-300 hover:shadow-[0_4px_10px_-1px_rgba(0,0,0,0.1),0_2px_6px_-2px_rgba(0,0,0,0.1)]", className)}
       {...props}
     />
   )

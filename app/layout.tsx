@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Footer, Header } from "@/components/shared";
+import { Footer, Header, TabBar } from "@/components/shared";
 import { CompanyProvider } from "@/lib/hooks/CompanyContext";
 
 const geistSans = Geist({
@@ -32,6 +32,7 @@ export default function RootLayout({
           <Header />
           <main className="flex-1">{children}</main>
         </CompanyProvider>
+        <TabBar></TabBar>
         <Footer />
       </body>
     </html>

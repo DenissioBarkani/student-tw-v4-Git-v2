@@ -117,7 +117,7 @@ export default function StudentProfile() {
             <div className="">
               <div className="relative h-[250] mb-6 rounded-xl overflow-hidden">
                 <Image
-                  src="/company/sapka_dlia_kataloga_small.png"
+                  src="/company/cardStudentMan.jpg"
                   alt="Фото студента"
                   className="object-cover"
                   fill

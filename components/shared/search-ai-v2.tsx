@@ -121,7 +121,7 @@ export const SearchAiV2 = ({ className }: SearchAiV2Props) => {
 
   return (
     <>
-      <div className={cn("mx-10 flex-1", className)}>
+      <div className={cn("md:mx-10 flex-1", className)}>
         <form
           ref={formRef}
           onSubmit={submit}
